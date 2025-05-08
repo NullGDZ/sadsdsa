@@ -442,9 +442,9 @@ class GUI {
                   return
                 }
                 
-                if (currentTime - lastChangeTime < 10000) {
+                if (currentTime - lastChangeTime < 5000) {
                   sliderChangeCount++;
-                  if (sliderChangeCount >= 3) {
+                  if (sliderChangeCount >= 5) {
                     sliderLocked = !0;
                     let countdownDiv = document.createElement('div');
                     countdownDiv.id = 'slider-countdown';
@@ -462,7 +462,7 @@ class GUI {
                     c.setAttribute('disabled', !0);
                     c.style.opacity = "0.5";
                     c.style.pointerEvents = "none";
-                    let secondsLeft = 15;
+                    let secondsLeft = 5;
                     countdownDiv.textContent = `${secondsLeft}s`;
                     countdownInterval = setInterval(() => {
                       secondsLeft--;
